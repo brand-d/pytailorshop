@@ -99,7 +99,17 @@ class Tailorshop:
             self.last_actions.use_steps = use_steps
         else:
             self.last_actions = Controllable_Variables(use_steps=use_steps)
+        
+        self.initial_state = copy(self.current_state)
+        self.initial_actions = copy(self.last_actions)
     
+    """ Resets the tailorshop simulation.
+
+    """
+    def reset(self) -> None:
+        self.current_state = copy(self.initial_state)
+        self.last_actions = copy(self.initial_actions)
+
     """ Calculates the production capacity for 50-shirts-producing machines.
 
     Parameters

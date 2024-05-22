@@ -5,7 +5,8 @@ The implementation was also used for our [work](https://github.com/brand-d/iccm2
 
 ## Overview
 
-- `main.py`: Contains an exemplary run of a few steps in the tailorshop scenario.
+- `main.py`: Contains an examplary run of a few steps in the tailorshop scenario.
+- `main_gui.py`: Launches a GUI for the Tailorshop simulation.
 - `tailorshop.py`: Contains the main simulator class.
 - `ts_types.py`: Contains classes for managing the observable, derived variables (`Tailorshop_State`) and the controllable variables/actions (`Controllable_Variables`).
 
@@ -23,6 +24,13 @@ In order to run the main script with the example, use the following commands:
 ```
 cd /path/to/repository/
 $> python main.py
+```
+
+To open the GUI, use the following command instead:
+
+```
+cd /path/to/repository/
+$> python main_gui.py
 ```
 
 ## References
