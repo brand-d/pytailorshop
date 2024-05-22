@@ -213,24 +213,36 @@ def add_action_widgets(action_frame : LabelFrame, text : str, key : str,
 
     """
 def create_action_frame(action_frame : LabelFrame) -> None:
-    add_action_widgets(action_frame, "Workers (50):", "workers50", actions.workers50, change_w50, 0)
-    add_action_widgets(action_frame, "Workers (100):", "workers100", actions.workers100, change_w100, 1)
+    add_action_widgets(action_frame, "Workers (50):", "workers50", 
+                       actions.workers50, change_w50, 0)
+    add_action_widgets(action_frame, "Workers (100):", "workers100", 
+                       actions.workers100, change_w100, 1)
 
-    add_action_widgets(action_frame, "Worker Salary:", "workers_salary", actions.workers_salary, change_w_sal, 2)
-    add_action_widgets(action_frame, "Worker Benefits:", "workers_benefits", actions.worker_benefits, change_w_ben, 3)
+    add_action_widgets(action_frame, "Worker Salary:", "workers_salary", 
+                       actions.workers_salary, change_w_sal, 2)
+    add_action_widgets(action_frame, "Worker Benefits:", "workers_benefits", 
+                       actions.worker_benefits, change_w_ben, 3)
     
-    add_action_widgets(action_frame, "Machines (50):", "machines50", actions.machines50, change_m50, 4)
-    add_action_widgets(action_frame, "Machines (100):", "machines100", actions.machines100, change_m100, 5)
-    add_action_widgets(action_frame, "Machines Maintenance:", "maintenance", actions.machines_maintenance, change_maintenance, 6)
+    add_action_widgets(action_frame, "Machines (50):", "machines50", 
+                       actions.machines50, change_m50, 4)
+    add_action_widgets(action_frame, "Machines (100):", "machines100", 
+                       actions.machines100, change_m100, 5)
+    add_action_widgets(action_frame, "Machines Maintenance:", "maintenance", 
+                       actions.machines_maintenance, change_maintenance, 6)
 
-    add_action_widgets(action_frame, "Material Order:", "material_order", actions.material_order, change_material_order, 7)
+    add_action_widgets(action_frame, "Material Order:", "material_order", 
+                       actions.material_order, change_material_order, 7)
 
-    add_action_widgets(action_frame, "Outlet Stores:", "outlets", actions.outlets, change_outlets, 8)
-    add_action_widgets(action_frame, "Store Locations:", "location", actions.location, change_location, 9)
-    change_location(0)
+    add_action_widgets(action_frame, "Outlet Stores:", "outlets", 
+                       actions.outlets, change_outlets, 8)
+    add_action_widgets(action_frame, "Store Locations:", "location", 
+                       actions.location, change_location, 9)
+    change_location(0) # Used to convert the numeric into a text in the GUI
 
-    add_action_widgets(action_frame, "Shirt Price:", "shirt_price", actions.shirt_price, change_shirt_price, 10)
-    add_action_widgets(action_frame, "Advertising:", "advertising", actions.advertising, change_advertising, 11)
+    add_action_widgets(action_frame, "Shirt Price:", "shirt_price", 
+                       actions.shirt_price, change_shirt_price, 10)
+    add_action_widgets(action_frame, "Advertising:", "advertising", 
+                       actions.advertising, change_advertising, 11)
 
     action_frame.grid_columnconfigure(0, weight=10)
     action_frame.grid_columnconfigure(1, weight=3)
@@ -278,16 +290,26 @@ def add_observation_var_widget(observation_frame : LabelFrame,
 
     """
 def create_observation_frame(observation_frame : LabelFrame) -> None:
-    add_observation_var_widget(observation_frame, "Bank Account:", "bank_account", tailorshop.current_state.bank_account, 0)
-    add_observation_var_widget(observation_frame, "Company Value:", "company_value", tailorshop.current_state.company_value, 1)
-    add_observation_var_widget(observation_frame, "Shirt Sales:", "shirt_sales", tailorshop.current_state.shirt_sales, 2)
-    add_observation_var_widget(observation_frame, "Shirt Stock:", "shirt_stock", tailorshop.current_state.shirt_stock, 3)
-    add_observation_var_widget(observation_frame, "Material Price:", "material_price", tailorshop.current_state.material_price, 4)
-    add_observation_var_widget(observation_frame, "Material Stock:", "material_stock", tailorshop.current_state.material_stock, 5)
-    add_observation_var_widget(observation_frame, "Customer Interest:", "customer_interest", tailorshop.current_state.customer_interest, 6)
-    add_observation_var_widget(observation_frame, "Production Idle:", "production_idle", tailorshop.current_state.production_idle, 7)
-    add_observation_var_widget(observation_frame, "Machine Damage:", "damage", tailorshop.current_state.damage, 8)
-    add_observation_var_widget(observation_frame, "Worker Satisfaction:", "worker_satisfaction", tailorshop.current_state.percent_worker_satisfaction, 9)
+    add_observation_var_widget(observation_frame, "Bank Account:", "bank_account", 
+                               tailorshop.current_state.bank_account, 0)
+    add_observation_var_widget(observation_frame, "Company Value:", "company_value", 
+                               tailorshop.current_state.company_value, 1)
+    add_observation_var_widget(observation_frame, "Shirt Sales:", "shirt_sales", 
+                               tailorshop.current_state.shirt_sales, 2)
+    add_observation_var_widget(observation_frame, "Shirt Stock:", "shirt_stock", 
+                               tailorshop.current_state.shirt_stock, 3)
+    add_observation_var_widget(observation_frame, "Material Price:", "material_price", 
+                               tailorshop.current_state.material_price, 4)
+    add_observation_var_widget(observation_frame, "Material Stock:", "material_stock", 
+                               tailorshop.current_state.material_stock, 5)
+    add_observation_var_widget(observation_frame, "Customer Interest:", "customer_interest", 
+                               tailorshop.current_state.customer_interest, 6)
+    add_observation_var_widget(observation_frame, "Production Idle:", "production_idle", 
+                               tailorshop.current_state.production_idle, 7)
+    add_observation_var_widget(observation_frame, "Machine Damage:", "damage", 
+                               tailorshop.current_state.damage, 8)
+    add_observation_var_widget(observation_frame, "Worker Satisfaction:", "worker_satisfaction", 
+                               tailorshop.current_state.percent_worker_satisfaction, 9)
 
     observation_frame.grid_columnconfigure(0, weight=8)
     observation_frame.grid_columnconfigure(1, weight=3)
@@ -295,17 +317,28 @@ def create_observation_frame(observation_frame : LabelFrame) -> None:
 """ Updates the stats segments of the GUI.
     """
 def update_information() -> None:
-    state_variables["turn"].set("Turn: {}".format(round(tailorshop.current_state.turn)))
-    state_variables["bank_account"].set(str(round(tailorshop.current_state.bank_account)))
-    state_variables["company_value"].set(str(round(tailorshop.current_state.company_value)))
-    state_variables["shirt_sales"].set(str(round(tailorshop.current_state.shirt_sales)))
-    state_variables["shirt_stock"].set(str(round(tailorshop.current_state.shirt_stock)))
-    state_variables["material_price"].set(str(round(tailorshop.current_state.material_price)))
-    state_variables["material_stock"].set(str(round(tailorshop.current_state.material_stock)))
-    state_variables["customer_interest"].set(str(round(tailorshop.current_state.customer_interest)))
-    state_variables["production_idle"].set(str(round(tailorshop.current_state.production_idle)))
-    state_variables["damage"].set(str(round(tailorshop.current_state.damage)))
-    state_variables["worker_satisfaction"].set(str(round(tailorshop.current_state.percent_worker_satisfaction)))
+    state_variables["turn"].set(
+        "Turn: {}".format(round(tailorshop.current_state.turn)))
+    state_variables["bank_account"].set(
+        str(round(tailorshop.current_state.bank_account)))
+    state_variables["company_value"].set(
+        str(round(tailorshop.current_state.company_value)))
+    state_variables["shirt_sales"].set(
+        str(round(tailorshop.current_state.shirt_sales)))
+    state_variables["shirt_stock"].set(
+        str(round(tailorshop.current_state.shirt_stock)))
+    state_variables["material_price"].set(
+        str(round(tailorshop.current_state.material_price)))
+    state_variables["material_stock"].set(
+        str(round(tailorshop.current_state.material_stock)))
+    state_variables["customer_interest"].set(
+        str(round(tailorshop.current_state.customer_interest)))
+    state_variables["production_idle"].set(
+        str(round(tailorshop.current_state.production_idle)))
+    state_variables["damage"].set(
+        str(round(tailorshop.current_state.damage)))
+    state_variables["worker_satisfaction"].set(
+        str(round(tailorshop.current_state.percent_worker_satisfaction)))
     if tailorshop.is_finished():
         state_variables["finished"].set("Finished!")
     else:
@@ -344,14 +377,28 @@ def next_step() -> None:
     tailorshop.do_next_step(actions)
     update_information()
 
+""" Creates the simulation frame (footer), where controls and turn indicator is located.
+
+    Parameters
+    ----------
+
+    simulation_footer : LabelFrame
+        The LabelFrame instance to add widgets to.
+
+    """
 def create_simulation_bar(simulation_footer : LabelFrame) -> None:
     state_variables["turn"] = StringVar()
-    state_variables["turn"].set("Turn: {}".format(round(tailorshop.current_state.turn)))
-    status_label = Label(simulation_footer, textvariable=state_variables["turn"], width=10)
+    state_variables["turn"].set(
+        "Turn: {}".format(round(tailorshop.current_state.turn)))
+    status_label = Label(simulation_footer, 
+                         textvariable=state_variables["turn"], 
+                         width=10)
     status_label.grid(row=0, column=0)
 
     state_variables["finished"] = StringVar()
-    finished_label = Label(simulation_footer, textvariable=state_variables["finished"], width=10)
+    finished_label = Label(simulation_footer, 
+                           textvariable=state_variables["finished"], 
+                           width=10)
     finished_label.grid(row=0, column=1)
 
     next = Button(simulation_footer, text="Next Step", command=next_step, width=15)
